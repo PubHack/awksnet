@@ -18,6 +18,8 @@
     // Prepare the geocoder for form submission
     var geocoder = new google.maps.Geocoder();
 
+    map.fuckingMap = mapInstance;
+
     var AwkwardMap = function() {
 
         this.markers = function(locations) {
@@ -26,7 +28,7 @@
             }
         };
 
-        this.getCircleScale = function(upvoteIntensity) {
+        this.getCircleColor = function(upvoteIntensity) {
             return 'red';
         }
 
@@ -34,14 +36,14 @@
             return Math.pow(2, cityCount) / Math.PI;
         };
 
-        this.getCircle = function(cityCount, upvoteIntensity) {
+        this.getCircle = function(cityCount) {
             return {
               path: google.maps.SymbolPath.CIRCLE,
               fillOpacity: .2,
-              fillColor: this.getCircleColor(upvoteIntensity),
-              scale: this.getCircleScale(cityCount),
-              // strokeColor: 'white',
-              // strokeWeight: .5
+              fillColor: 'red',
+              scale: cityCount * 10,
+              strokeColor: 'white',
+              strokeWeight: .5
             };
         };
 
@@ -52,29 +54,26 @@
 
         this.setMarkers = function(theMap)
         {
+            var self = this;
+
             if(locations.length) {
                 for(i in locations) {
 
                     //console.log(locations[i].city);
                     this.geocodeAddress(locations[i].city, function(coords) {
                         // console.log(coords[0]);
-
-                        console.log(coords[0].geometry.location.lat());
-                        console.log(coords[0].geometry.location.lng());
-
+                        //
                         var marker,
                             latLng = new google.maps.LatLng(
                                 coords[0].geometry.location.lat(),
                                 coords[0].geometry.location.lng()
                             );
 
-
-
                         marker = new google.maps.Marker({
                             position: latLng,
                             title: locations[i].city,
-                            map: mapInstance//,
-                            //icon: map.mapMarkerIcon
+                            map: mapInstance,
+                            icon: self.getCircle(locations[i].count)
                         });
 
                         map.markers.push(marker);
@@ -83,6 +82,8 @@
                     });
 
                 }
+
+                //map.fuckingMap.fitBounds(map.bounds);
             }
         };
     }
