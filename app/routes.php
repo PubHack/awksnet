@@ -20,24 +20,22 @@ Route::group(array('before' => 'guest'), function() {
 		'as' 	=> 'login',
 		'uses'	=> 'AuthController@login'
 	));
+	Route::post('/login', array(
+		'as' 	=> 'login',
+		'uses' 	=> 'AuthController@loginPost'
+	));
 
 	Route::get('/signup', array(
 		'as' 	=> 'signup',
 		'uses'	=> 'AuthController@signup'
+	));
+	Route::post('/signup', array(
+		'as' 	=> 'signup',
+		'uses' 	=> 'AuthController@signupPost'
 	));
 });
 
 Route::get('/logout', array(
 	'as'	=> 'logout',
 	'uses'	=> 'AuthController@logout'
-));
-
-Route::post('/login', array(
-	'as' 	=> 'login-post',
-	'uses' 	=> 'AuthController@loginPost'
-));
-
-Route::post('/signup', array(
-	'as' 	=> 'signup-post',
-	'uses' 	=> 'AuthController@signupPost'
 ));

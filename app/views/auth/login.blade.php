@@ -1,8 +1,16 @@
 @extends('templates.master')
 
 @section('content')
-    {{ var_dump($errors) }}
-    {{ Form::open(['url' => '/login']) }}
+
+    @if($errors->any())
+        <ul class="message--error">
+            @foreach($errors as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif()
+
+    {{ Form::open(['route' => 'login']) }}
 
         <div class="form__feild-set">
             {{ Form::label('username', 'Username') }}

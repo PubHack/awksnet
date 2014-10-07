@@ -10,7 +10,7 @@
         </ul>
     @endif()
 
-    {{ Form::open(['route' => 'signup-post']) }}
+    {{ Form::open(['route' => 'update']) }}
 
         <div class="form__feild-set">
             {{ Form::label('username', 'Username') }}
@@ -37,7 +37,7 @@
             {{ Form::text('city') }}
         </div>
 
-        {{ Form::submit('Join the NSA mailing list.') }}
+        {{ Form::submit('Submit') }}
 
     {{ Form::close() }}
 
