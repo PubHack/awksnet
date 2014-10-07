@@ -36,16 +36,16 @@ class AuthController extends BaseController {
         $password   = Input::get('password');
 
         if($validator->fails()) {
-            return Redirect::to('login')->withErrors($validator);
+            return Redirect::to('/login')->withErrors($validator);
         }
 
         $attempt = Auth::attempt(array('username' => $username, 'password' => $password));
 
         if($attempt) {
-            return Redirect::intended('home');
+            return Redirect::route('home');
         }
 
-        return Redirect::to('login')->withErrors(array('Username or password is incorrect'));
+        return Redirect::to('/login')->withErrors(array('Username or password is incorrect'));
     }
 
     public function signupPost()
@@ -59,17 +59,17 @@ class AuthController extends BaseController {
         $user->password  = Hash::make(Input::get('password'));
 
         if($validator->fails()) {
-            return Redirect::to('signup')->withErrors($validator);
+            return Redirect::to('/signup')->withErrors($validator);
         }
 
         $user->save();
         Auth::login($user);
-        return Redirect::intended('home');
+        return Redirect::route('home');
     }
 
     public function logout()
     {
         Auth::logout();
-        return Redirect::intended('home');
+        return Redirect::route('home');
     }
 }

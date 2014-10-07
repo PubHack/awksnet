@@ -1,8 +1,8 @@
 @extends('templates.master')
 
 @section('content')
-
-    {{ Form::open(['url' => '/']) }}
+    {{ var_dump($errors) }}
+    {{ Form::open(['url' => '/login']) }}
 
         <div class="form__feild-set">
             {{ Form::label('username', 'Username') }}
