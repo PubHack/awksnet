@@ -29,13 +29,13 @@
         <div class="page__header">
             <h1><a href="/">awksnet</a> <small>Where awkwardness is celebrated.</small></h1>
             <ul class="nav">
+                <li class="nav__item"><a class="nav__link" href="/map">Map of awkward</a></li>
                 @if(!isset($user))
                 <li class="nav__item"><a class="nav__link" href="/login">Login</a></li>
                 <li class="nav__item"><a class="nav__link" href="/signup">Signup</a></li>
                 @else
                 <li class="nav__item"><a class="nav__link" href="/logout">Logout</a></li>
                 @endif
-                <li class="nav__item"><a class="nav__link" href="/map">Map of awkward</a></li>
             </ul>
         </div>
         <div class="page__content">

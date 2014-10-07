@@ -5,8 +5,8 @@
     @if(isset($user))
     {{ Form::open(['route' => 'add']) }}
         <div class="form__field-set">
-            {{ Form::label('body', 'An awkward situation you have been in') }}
-            {{ Form::text('body', Input::old('body'), ['placeholder'=>'I soiled myself whilst writing this']) }}
+            {{ Form::label('body', 'How this works: Type the most awkward thing that you can think of or has happened to you and people will rate how awkward it is') }}
+            {{ Form::text('body', Input::old('body'), ['placeholder'=>'Example: I soiled myself whilst writing this']) }}
             {{ Form::submit('Add') }}
         </div>
 
@@ -29,7 +29,7 @@
                         <header class="item__header">
                             <h2 class="item__heading"><a href="{{ $situation->link() }}">{{ $situation->user->username }}</a></h2>
                             <ul class="item__meta">
-                                <li>{{ $situation->created_at }}</li>
+                                <li>{{ (new DateTime($situation->created_at))->format('H:i d-m-Y') }}</li>
                             </ul>
                         </header>
                         <div class="item__body">
