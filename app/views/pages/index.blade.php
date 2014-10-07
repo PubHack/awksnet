@@ -25,8 +25,6 @@
 
                 <div class="item__inner-wrap">
                     <img class="item__image" src="{{ $situation->user->gravatar() }}" alt="{{ $situation->user->username }}" />
-                    <a href="/voteup/{{ $situation->id }}"><i class="fa fa-caret-up"></i></a>
-                    <a href="/votedown/{{ $situation->id }}"><i class="fa fa-caret-down"></i></a>
                     <div class="item__content">
                         <header class="item__header">
                             <h2 class="item__heading"><a href="{{ $situation->link() }}">{{ $situation->user->username }}</a></h2>
@@ -37,6 +35,8 @@
                         <div class="item__body">
                             {{ $situation->body }}
                         </div>
+                    <a href="/voteup/{{ $situation->id }}"><i class="fa fa-caret-up vote"></i></a>
+                    <a href="/votedown/{{ $situation->id }}"><i class="fa fa-caret-down vote"></i></a>
                     </div>
                 </div>
 
