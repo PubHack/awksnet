@@ -60,6 +60,6 @@ class Situation extends Eloquent {
      */
     public function link()
     {
-        return url('/situation/' + $this->id);
+        return url('situation/' . $this->id);
     }
 }

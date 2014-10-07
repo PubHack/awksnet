@@ -37,7 +37,7 @@
             {{ Form::text('city') }}
         </div>
 
-        {{ Form::submit('Join the NSA mailing list.') }}
+        {{ Form::submit('Join the NSA mailing list') }}
 
     {{ Form::close() }}
 
