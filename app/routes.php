@@ -10,6 +10,11 @@ Route::get('/map', array(
 	'uses'	=> 'HomeController@map'
 ));
 
+Route::get('/situation/{id}', array(
+	'as'	=> 'single',
+	'uses'	=> 'AuthController@single'
+));
+
 Route::get('/login', array(
 	'as' 	=> 'login',
 	'uses'	=> 'AuthController@login'
