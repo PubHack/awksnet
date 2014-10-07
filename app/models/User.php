@@ -30,8 +30,7 @@ class User extends Eloquent {
 		'password',
 		'city',
 		'created_at',
-		'updated_at',
-		'city'
+		'updated_at'
 	);
 
 

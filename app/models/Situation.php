@@ -18,7 +18,7 @@ class Situation extends Eloquent {
      * @var array
      */
     protected $fillable = array(
-        'statement',
+        'body',
         'user_id',
         'upvotes',
         'downvotes',
