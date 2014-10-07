@@ -33,4 +33,13 @@ class Situation extends Eloquent {
         return $this->belongsTo('User');
     }
 
+    /**
+     * Percentage of votes that are upvotes
+     * @return int
+     */
+    public function percentage()
+    {
+        return $this->upvotes / ($this->upvotes + $this->downvotes);
+    }
+
 }
