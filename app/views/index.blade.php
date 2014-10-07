@@ -8,6 +8,7 @@
             <article class="item">
                 <header class="item__header">
                     <h2 class="item__heading">{{ $situation->user->username }}</h2>
+                    <img src="{{ $situation->user->gravatar() }}" alt="{{ $situation->user->username }}" />
                     <ul class="item__meta">
                         <li>{{ $situation->created_at }}</li>
                         <li>{{ $situation->upvotes }}</li>
