@@ -29,7 +29,8 @@ class Situation extends Eloquent {
     /**
      * Add relationship for user to situation
      */
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('User');
     }
 

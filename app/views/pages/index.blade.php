@@ -27,7 +27,7 @@
                     <img class="item__image" src="{{ $situation->user->gravatar() }}" alt="{{ $situation->user->username }}" />
                     <div class="item__content">
                         <header class="item__header">
-                            <h2 class="item__heading"><a href="{{ $situation->link() }}">{{ $situation->user->username }}</a></h2>
+                            <h2 class="item__heading">{{ $situation->user->username }}</h2>
                             <ul class="item__meta">
                                 <li>{{ (new DateTime($situation->created_at))->format('H:i d-m-Y') }}</li>
                             </ul>
