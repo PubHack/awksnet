@@ -46,9 +46,13 @@ Route::group(array('before' => 'is_user'), function() {
 		'uses'  => 'AuthController@updatePost'
 	));
 
-	Route::get('/logout', array(
-		'as'	=> 'logout',
-		'uses'	=> 'AuthController@logout'
+	Route::post('/add', array(
+		'as' 	=> 'add',
+		'uses' 	=> 'HomeController@add'
 	));
-
 });
+
+Route::get('/logout', array(
+	'as'	=> 'logout',
+	'uses'	=> 'AuthController@logout'
+));

@@ -1,6 +1,14 @@
 @extends('templates.master')
 
 @section('content')
+    {{ Form::open(['route' => 'add']) }}
+
+        <div class="form__feild-set">
+            {{ Form::label('body', 'An awkward situation you have been in') }}
+            {{ Form::text('body', Input::old('body'), ['placeholder'=>'I soiled myself whilst writing this']) }}
+        </div>
+        {{ Form::submit('Add') }}
+    {{ Form::close() }}
 
     <div class="feed">
 

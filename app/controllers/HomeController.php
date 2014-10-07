@@ -31,7 +31,22 @@ class HomeController extends BaseController {
 
 	public function add()
 	{
+		$validator = Validator::make(Input::all(), array(
+			'body' => 'required'
+		));
+
 		$body = Input::get('body');
+
+		if(!$validator->fails()) {
+			$situation = new Situation;
+			$situation->body = $body;
+			$situation->upvotes = 0;
+			$situation->downvotes = 0;
+			$situation->user_id = $this->user->id;
+			$situation->save();
+		}
+		
+		return Redirect::route('home');
 	}
 
 }
