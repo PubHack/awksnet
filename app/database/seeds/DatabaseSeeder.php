@@ -64,10 +64,94 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I once had to talk to a human being for more than 5 seconds.',
+			'body' 		=> 'I once accidentally went to a ',
 			'upvotes' 	=> 432,
 			'downvotes' => 8,
 			'user_id' 	=> $steve->id
+		));
+
+		$rebecca = User::create(array(
+			'username' 	=> 'rebecca',
+			'email' 	=> 'rebecca@example.com',
+			'password' 	=> Hash::make('rebecca'),
+			'city'		=> 'London'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'No one ever laughs at my jokes',
+			'upvotes' 	=> 2,
+			'downvotes' => 8,
+			'user_id' 	=> $rebecca->id
+		));
+
+		$jimmy = User::create(array(
+			'username' 	=> 'jimmy',
+			'email' 	=> 'jimmy@example.com',
+			'password' 	=> Hash::make('jimmy'),
+			'city'		=> 'Paris'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'I once tripped over my own leg',
+			'upvotes' 	=> 4,
+			'downvotes' => 8,
+			'user_id' 	=> $jimmy->id
+		));
+
+		$patrick = User::create(array(
+			'username' 	=> 'patrick',
+			'email' 	=> 'patrick@example.com',
+			'password' 	=> Hash::make('patrick'),
+			'city'		=> 'Tokyo'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'I once had to talk to a human being for more than 5 seconds.',
+			'upvotes' 	=> 42,
+			'downvotes' => 128,
+			'user_id' 	=> $patrick->id
+		));
+
+		$sophie = User::create(array(
+			'username' 	=> 'sophie',
+			'email' 	=> 'sophie@example.com',
+			'password' 	=> Hash::make('sophie'),
+			'city'		=> 'London'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'I once had to talk to a human being for more than 1 second. Crazy',
+			'upvotes' 	=> 432,
+			'downvotes' => 8211,
+			'user_id' 	=> $sophie->id
+		));
+
+		$lemon = User::create(array(
+			'username' 	=> 'lemon',
+			'email' 	=> 'lemon@example.com',
+			'password' 	=> Hash::make('lemon'),
+			'city'		=> 'London'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'I once had a dream I sold meth.',
+			'upvotes' 	=> 432,
+			'downvotes' => 811,
+			'user_id' 	=> $lemon->id
+		));
+
+		$robert = User::create(array(
+			'username' 	=> 'robert',
+			'email' 	=> 'robert@example.com',
+			'password' 	=> Hash::make('robert'),
+			'city'		=> 'London'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'I am Sparta.',
+			'upvotes' 	=> 2,
+			'downvotes' => 8,
+			'user_id' 	=> $robert->id
 		));
 	}
 

@@ -27,10 +27,10 @@
             {{ Form::password('password') }}
         </div>
 
-        <div class="form__feild-set">
+        <!-- <div class="form__feild-set">
             {{ Form::label('password_confirmation', 'Confirm password') }}
             {{ Form::password('password_confirmation') }}
-        </div>
+        </div> -->
 
         <div class="form__feild-set">
             {{ Form::label('city', 'City') }}
