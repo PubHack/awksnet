@@ -16,6 +16,7 @@
         <title>awksnet</title>
 
         <link rel="stylesheet" type="text/css" href="styles/main.css" charset="utf-8">
+        <link href='http://fonts.googleapis.com/css?family=Hind:400,300,500,600,700' rel='stylesheet' type='text/css'>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

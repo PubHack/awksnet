@@ -1,0 +1,15 @@
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    color: $base-font-color;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+small {
+    font-size: 50%;
+    color: lighten($base-font-color, 15%);
+}
