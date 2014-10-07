@@ -38,7 +38,17 @@ class User extends Eloquent {
 	/**
 	 * Add relationship all situations
 	 */
-	public function situations() {
+	public function situations()
+	{
 		return $this->hasMany('Situation');
+	}
+
+	/**
+	 * Return the gravatar link
+	 * @return String
+	 */
+	public function gravatar()
+	{
+		return 'http://www.gravatar.com/avatar/' . md5($this->email);
 	}
 }
