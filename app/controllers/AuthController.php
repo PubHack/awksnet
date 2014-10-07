@@ -5,12 +5,13 @@
  */
 class AuthController extends BaseController {
 
-    // rules for all auth stuff
+    // Rules for login fields
     private $loginRules = array(
         'username' => 'required|exists:users',
         'password' => 'required'
     );
 
+    // Rules for signup fields
     private $signupRules = array(
         'username' => 'required|unique:users',
         'email'    => 'required|email',
@@ -20,12 +21,12 @@ class AuthController extends BaseController {
 
     public function login()
     {
-        return View::make('login');
+        return View::make('auth.login');
     }
 
     public function signup()
     {
-        return View::make('signup');
+        return View::make('auth.signup');
     }
 
     public function loginPost()
@@ -69,5 +70,6 @@ class AuthController extends BaseController {
     public function logout()
     {
         Auth::logout();
+        return Redirect::intended('home');
     }
 }
