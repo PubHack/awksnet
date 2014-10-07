@@ -12,7 +12,7 @@ Route::get('/map', array(
 
 Route::get('/situation/{id}', array(
 	'as'	=> 'single',
-	'uses'	=> 'AuthController@single'
+	'uses'	=> 'HomeController@single'
 ));
 
 Route::group(array('before' => 'guest'), function() {

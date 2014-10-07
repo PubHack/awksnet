@@ -42,4 +42,12 @@ class Situation extends Eloquent {
         return $this->upvotes / ($this->upvotes + $this->downvotes);
     }
 
+    /**
+     * Link for this situation
+     * @return String
+     */
+    public function link()
+    {
+        return url('/situation/' + $this->id);
+    }
 }
