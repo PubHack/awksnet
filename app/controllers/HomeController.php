@@ -8,9 +8,22 @@ class HomeController extends BaseController {
 		return View::make('index', array('situations' => $situations));
 	}
 
+	public function single($id)
+	{
+		$situation = Situation::find($id);
+		return View::make('pages.single', array('situation' => $situation));
+	}
+
 	public function map()
 	{
-		return View::make('pages.map');
+		$situations = DB::table('situations')
+                    ->orderBy('upvotes', 'desc')
+					->take(100)
+                    ->get();
+		$locations = array();
+		return View::make('pages.map', array(
+			'locations' => $locations
+		));
 	}
 
 }
