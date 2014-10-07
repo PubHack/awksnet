@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!--
+             _____     ____
+            /      \  |  o |
+           |        |/ ___\|
+           |_________/
+           |_|_| |_|_|
+
+        -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +26,11 @@
     </head>
     <body class="page">
         <div class="page__header">
-
+            <h1>awksnet <small>Where awkwardness is celebrated.</small></h1>
+            <ul class="nav">
+                <li class="nav__item"><a class="nav__link" href="/login">/login</a></li>
+                <li class="nav__item"><a class="nav__link" href="/signup">signup</a></li>
+                <li class="nav__item"><a class="nav__link" href="/map">map of awkward</a></li>
+            </ul>
         </div>
         <div class="page__content">
