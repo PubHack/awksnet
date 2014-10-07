@@ -4,8 +4,8 @@
 
     @forelse($locations as $location)
         {{ var_dump($location) }}
-    @empty
+    @empty()
         <h2>No locations brah</h2>
-    @endforelse
+    @endforelse()
 
 @stop
