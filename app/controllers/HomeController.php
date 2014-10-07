@@ -16,11 +16,14 @@ class HomeController extends BaseController {
 
 	public function map()
 	{
-		$situations = DB::table('situations')
+		$locations = DB::table('situations')
+		 			->join('users', 'users.id', '=', 'situations.user_id')
                     ->orderBy('upvotes', 'desc')
 					->take(100)
+					->select(DB::raw('users.city, count(users.city) as count'))
+					->groupBy('users.city')
                     ->get();
-		$locations = array();
+
 		return View::make('pages.map', array(
 			'locations' => $locations
 		));
