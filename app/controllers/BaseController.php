@@ -2,6 +2,12 @@
 
 class BaseController extends Controller {
 
+	public function __construct()
+	{
+		// Add csrf filter to anything which passes data to the server
+		$this->beforeFilter('csrf', array('on' => array('post', 'put', 'patch', 'delete')));
+	}
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
@@ -9,7 +15,7 @@ class BaseController extends Controller {
 	 */
 	protected function setupLayout()
 	{
-		if ( ! is_null($this->layout))
+		if(!is_null($this->layout))
 		{
 			$this->layout = View::make($this->layout);
 		}
