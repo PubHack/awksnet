@@ -10,7 +10,7 @@ class HomeController extends BaseController {
 
 	public function map()
 	{
-		return View::make('map');
+		return View::make('pages.map');
 	}
 
 }
