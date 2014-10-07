@@ -4,7 +4,7 @@ class HomeController extends BaseController {
 
 	public function feed()
 	{
-		$situations = Situation::all()->orderBy('created_at')->get();
+		$situations = Situation::all();
 		return View::make('index', array('situations' => $situations));
 	}
 
