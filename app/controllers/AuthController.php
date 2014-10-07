@@ -19,6 +19,14 @@ class AuthController extends BaseController {
         'city'     => 'required'
     );
 
+    // Rules for account editing fields
+    private $signupRules = array(
+        'username' => 'required',
+        'email'    => 'required|email',
+        'password' => 'required',
+        'city'     => 'required'
+    );
+
     public function login()
     {
         return View::make('auth.login');
@@ -70,12 +78,24 @@ class AuthController extends BaseController {
 
         $user->save();
         Auth::login($user);
+
         return Redirect::route('home');
     }
 
     public function updatePost()
     {
-        $user = Auth::user();
+        $validator = Validator::make(Input::all(), $this->profileRules);
+
+        if($validator->fails()) {
+            return Redirect::route('account')->withErrors($validator);
+        }
+
+        $this->user->username   = Input::get('username');
+        $this->user->password   = Input::get('password');
+        $this->user->email      = Input::get('email');
+        $this->user->city       = Input::get('city');
+        $this->user->save();
+
         return View::make('auth.update');
     }
 

@@ -6,6 +6,12 @@ class BaseController extends Controller {
 	{
 		// Add csrf filter to anything which passes data to the server
 		$this->beforeFilter('csrf', array('on' => array('post', 'put', 'patch', 'delete')));
+
+		// Share the user info with any view if theres a login
+		if(Auth::check()) {
+			$this->user = Auth::user();
+			View::share('user', $this->user);
+		}
 	}
 
 	/**

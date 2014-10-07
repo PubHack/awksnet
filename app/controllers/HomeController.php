@@ -5,7 +5,7 @@ class HomeController extends BaseController {
 	public function feed()
 	{
 		$situations = Situation::all();
-		return View::make('index', array('situations' => $situations));
+		return View::make('index', array('situations' => $situations);
 	}
 
 	public function single($id)
@@ -24,6 +24,12 @@ class HomeController extends BaseController {
 		return View::make('pages.map', array(
 			'locations' => $locations
 		));
+	}
+
+	public function add()
+	{
+		$body = Input::get('body');
+	
 	}
 
 }
