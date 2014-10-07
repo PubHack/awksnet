@@ -13,11 +13,12 @@ class CreateSituationsTable extends Migration {
 	public function up()
 	{
 		Schema::create('situations', function($t) {
-			$t->increments();
+			$t->increments('id');
 			$t->text('body');
 			$t->integer('upvotes');
 			$t->integer('downvotes');
 			$t->timestamps();
+			$t->integer('user_id');
 			$t->foreign('user_id')->references('id')->on('users');
 		});
 	}
