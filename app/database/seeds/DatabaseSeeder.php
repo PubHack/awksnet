@@ -41,6 +41,34 @@ class DatabaseSeeder extends Seeder {
 			'downvotes' => 89,
 			'user_id' 	=> $craig->id
 		));
+
+		$john = User::create(array(
+			'username' 	=> 'john',
+			'email' 	=> 'john@example.com',
+			'password' 	=> Hash::make('john'),
+			'city'		=> 'East Preston'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'A girl once smiled at me.',
+			'upvotes' 	=> 54,
+			'downvotes' => 43,
+			'user_id' 	=> $john->id
+		));
+
+		$steve = User::create(array(
+			'username' 	=> 'steve',
+			'email' 	=> 'steve@example.com',
+			'password' 	=> Hash::make('steve'),
+			'city'		=> 'East Preston'
+		));
+
+		$situation = Situation::create(array(
+			'body' 		=> 'I once had to talk to a human being for more than 5 seconds.',
+			'upvotes' 	=> 432,
+			'downvotes' => 8,
+			'user_id' 	=> $steve->id
+		));
 	}
 
 }

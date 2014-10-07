@@ -20,9 +20,11 @@ class HomeController extends BaseController {
 		 			->join('users', 'users.id', '=', 'situations.user_id')
                     ->orderBy('upvotes', 'desc')
 					->take(100)
-					->select(DB::raw('users.city, count(users.city) as count'))
+					->select(DB::raw('users.city, count(users.city) as count, (sum(situations.upvotes) / sum(situations.downvotes)) as average'))
 					->groupBy('users.city')
                     ->get();
+
+		return $locations;
 
 		return View::make('pages.map', array(
 			'locations' => $locations
