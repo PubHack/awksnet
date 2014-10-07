@@ -5,7 +5,7 @@ class HomeController extends BaseController {
 	public function feed()
 	{
 		$situations = Situation::all();
-		return View::make('index', array('situations' => $situations);
+		return View::make('index', array('situations' => $situations));
 	}
 
 	public function single($id)
@@ -32,7 +32,7 @@ class HomeController extends BaseController {
 	public function add()
 	{
 		$body = Input::get('body');
-	
+
 	}
 
 }
