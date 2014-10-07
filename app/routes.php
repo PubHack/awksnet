@@ -33,7 +33,17 @@ Route::group(array('before' => 'guest'), function() {
 		'as' 	=> 'signup',
 		'uses' 	=> 'AuthController@signupPost'
 	));
+
+	Route::post('/account/{id}', array(
+		'as' 	=> 'update',
+		'uses'  => 'AuthController@updatePost'
+	));
 });
+
+Route::get('/account/{id}', array(
+	'as' 	=> 'update',
+	'uses'  => 'AuthController@update'
+));
 
 Route::get('/logout', array(
 	'as'	=> 'logout',
