@@ -68,6 +68,15 @@
     }
 }
 
+.link {
+    color: #555;
+
+    &:hover {
+        text-decoration: underline;
+        color: #000;
+    }
+}
+
 .vote {
     transition: color .1s linear;
     margin-right: 10px;

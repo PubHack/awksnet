@@ -12,9 +12,7 @@
 
     {{ Form::close() }}
     @endif
-
-    <p>Currently viewing: most awkward - <a href="/latest" class="link">View latest</a></p>
-
+    <p>Currently viewing: latest - <a href="/" class="link">View by most awkward</a></p>
     <div class="feed">
 
         @forelse($situations as $situation)

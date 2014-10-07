@@ -5,6 +5,11 @@ Route::get('/', array(
 	'uses' 	=> 'HomeController@feed'
 ));
 
+Route::get('/latest', array(
+	'as' 	=> 'home',
+	'uses' 	=> 'HomeController@latest'
+));
+
 Route::get('/map', array(
 	'as'	=> 'map',
 	'uses'	=> 'HomeController@map'

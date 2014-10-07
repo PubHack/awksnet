@@ -4,8 +4,14 @@ class HomeController extends BaseController {
 
 	public function feed()
 	{
-		$situations = Situation::where('id', '>', '0')->orderBy('created_at', 'desc')->take(100)->get();
+		$situations = Situation::where('id', '>', '0')->orderBy('upvotes', 'desc')->take(100)->get();
 		return View::make('pages.index', array('situations' => $situations));
+	}
+
+	public function latest()
+	{
+		$situations = Situation::where('id', '>', '0')->orderBy('created_at', 'desc')->take(100)->get();
+		return View::make('pages.latest', array('situations' => $situations));
 	}
 
 	public function single($id)
