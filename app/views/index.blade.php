@@ -2,16 +2,16 @@
 
 @section('content')
 
+    @if(isset($user))
     {{ Form::open(['route' => 'add']) }}
-
-        <div class="form__feild-set">
+        <div class="form__field-set">
             {{ Form::label('body', 'An awkward situation you have been in') }}
             {{ Form::text('body', Input::old('body'), ['placeholder'=>'I soiled myself whilst writing this']) }}
+            {{ Form::submit('Add') }}
         </div>
 
-        {{ Form::submit('Add') }}
-
     {{ Form::close() }}
+    @endif
 
     <div class="feed">
 
