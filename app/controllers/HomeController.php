@@ -52,4 +52,20 @@ class HomeController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	public function voteup($id)
+	{
+		$situation = Situation::find($id);
+		$situation->upvotes++;
+		$situation->save();
+		return Redirect::route('home');
+	}
+
+	public function votedown($id)
+	{
+		$situation = Situation::find($id);
+		$situation->downvotes++;
+		$situation->save();
+		return Redirect::route('home');
+	}
+
 }

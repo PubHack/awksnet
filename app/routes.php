@@ -56,3 +56,13 @@ Route::get('/logout', array(
 	'as'	=> 'logout',
 	'uses'	=> 'AuthController@logout'
 ));
+
+Route::get('/voteup/{id}', array(
+	'as' => 'voteup',
+	'uses'	=> 'HomeController@voteup'
+));
+
+Route::get('/votedown/{id}', array(
+	'as' => 'votedown',
+	'uses'	=> 'HomeController@votedown'
+));
