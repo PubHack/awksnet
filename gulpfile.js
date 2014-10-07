@@ -12,8 +12,7 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache'),
     // Other
-    clean = require('gulp-rimraf'),
-    notify = require('gulp-notify');
+    clean = require('gulp-rimraf');
 
 // Assets
 var paths = {
