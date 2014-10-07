@@ -31,8 +31,8 @@ class AuthController extends BaseController {
 
     public function update($id)
     {
-        $user = User::find($id);
-        return View::make('auth.update', array('user' => $user));
+        $user = Auth::user();
+        return View::make('auth.update');
     }
 
     public function loginPost()
@@ -73,10 +73,10 @@ class AuthController extends BaseController {
         return Redirect::route('home');
     }
 
-    public function updatePost($id)
+    public function updatePost()
     {
-        $user = User::find($id);
-        return View::make('auth.update', $user);
+        $user = Auth::user();
+        return View::make('auth.update');
     }
 
     public function logout()

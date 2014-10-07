@@ -27,7 +27,7 @@ Route::group(array('before' => 'guest'), function() {
 	));
 });
 
-Route::get('/account/{id}', array(
+Route::get('/account', array(
 	'as' 	=> 'update',
 	'uses'  => 'AuthController@update'
 ));
@@ -47,7 +47,7 @@ Route::post('/signup', array(
 	'uses' 	=> 'AuthController@signupPost'
 ));
 
-Route::post('/account/{id}', array(
+Route::post('/account', array(
 	'as' 	=> 'update',
 	'uses'  => 'AuthController@updatePost'
 ));
