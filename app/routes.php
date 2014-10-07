@@ -18,7 +18,7 @@ Route::get('/login', array(
 Route::get('/signup', array(
 	'as' 	=> 'signup',
 	'uses'	=> 'AuthController@signup'
-))
+));
 
 Route::get('/logout', array(
 	'as'	=> 'logout',
