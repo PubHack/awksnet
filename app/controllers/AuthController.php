@@ -20,7 +20,7 @@ class AuthController extends BaseController {
     );
 
     // Rules for account editing fields
-    private $signupRules = array(
+    private $profileRules = array(
         'username' => 'required',
         'email'    => 'required|email',
         'password' => 'required',

@@ -32,7 +32,6 @@ class HomeController extends BaseController {
 	public function add()
 	{
 		$body = Input::get('body');
-
 	}
 
 }
