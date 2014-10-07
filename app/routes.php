@@ -15,15 +15,17 @@ Route::get('/situation/{id}', array(
 	'uses'	=> 'AuthController@single'
 ));
 
-Route::get('/login', array(
-	'as' 	=> 'login',
-	'uses'	=> 'AuthController@login'
-));
+Route::group(array('before' => 'guest'), function() {
+	Route::get('/login', array(
+		'as' 	=> 'login',
+		'uses'	=> 'AuthController@login'
+	));
 
-Route::get('/signup', array(
-	'as' 	=> 'signup',
-	'uses'	=> 'AuthController@signup'
-));
+	Route::get('/signup', array(
+		'as' 	=> 'signup',
+		'uses'	=> 'AuthController@signup'
+	));
+});
 
 Route::get('/logout', array(
 	'as'	=> 'logout',
