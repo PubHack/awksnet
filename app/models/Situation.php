@@ -37,9 +37,18 @@ class Situation extends Eloquent {
      * Percentage of votes that are upvotes
      * @return int
      */
-    public function percentage()
+    public function percentageUpvotes()
     {
-        return $this->upvotes / ($this->upvotes + $this->downvotes);
+        return floor(($this->upvotes / ($this->upvotes + $this->downvotes)) * 100);
+    }
+
+    /**
+     * Percentage of votes that are downvotes
+     * @return int
+     */
+    public function percentageDownvotes()
+    {
+        return 100 - $this->percentageUpvotes();
     }
 
     /**

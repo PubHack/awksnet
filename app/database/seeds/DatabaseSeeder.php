@@ -16,15 +16,15 @@ class DatabaseSeeder extends Seeder {
 
 		$jake = User::create(array(
 			'username' 	=> 'jake',
-			'email' 	=> 'shout@cleary.net',
+			'email' 	=> 'shout@jakecleary.net',
 			'password' 	=> Hash::make('jake'),
 			'city'		=> 'Worthing'
 		));
 
 		$situation = Situation::create(array(
 			'body' 		=> 'I am making a statement here',
-			'upvotes' 	=> 1,
-			'downvotes' => 20000,
+			'upvotes' 	=> 843,
+			'downvotes' => 239,
 			'user_id' 	=> $jake->id
 		));
 
@@ -37,8 +37,8 @@ class DatabaseSeeder extends Seeder {
 
 		$situation = Situation::create(array(
 			'body' 		=> 'I am making a better statement here',
-			'upvotes' 	=> 10113,
-			'downvotes' => 2,
+			'upvotes' 	=> 34,
+			'downvotes' => 89,
 			'user_id' 	=> $craig->id
 		));
 	}
