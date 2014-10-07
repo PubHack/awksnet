@@ -1,0 +1,61 @@
+.feed {
+
+    .item {
+        @extend %clearfix;
+
+        margin: {
+            bottom: 2rem;
+        };
+
+        border: {
+            style: solid;
+            width: 0 1px 1px;
+            color: #ddd;
+            radius: 2px;
+        };
+
+        &__inner-wrap {
+            @extend %clearfix;
+
+            padding: 1rem;
+        }
+
+        &__image {
+            float: left;
+            width: 20%;
+            margin: {
+                right: 5%;
+            };
+        }
+
+        &__content {
+            float: left;
+            width: 75%;
+        }
+
+        &__header {
+
+        }
+    }
+}
+
+.vote-graph {
+    $height: 4px;
+
+    height: $height;
+    position: relative;
+
+    &__upvotes,
+    &__downvotes {
+        float: left;
+        height: $height;
+    }
+
+    &__upvotes {
+        background: #BDECB6;
+    }
+
+    &__downvotes {
+        background: #FF7878;
+    }
+}
