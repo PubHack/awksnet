@@ -1,13 +1,9 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
-
-class User extends Eloquent implements UserInterface, RemindableInterface {
-
-	use UserTrait, RemindableTrait;
+/**
+ * User model
+ */
+class User extends Eloquent {
 
 	/**
 	 * The database table used by the model.
@@ -21,6 +17,28 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password', 'remember_token');
+	protected $hidden = array('password');
 
+	/**
+	 * The attributes which are accessible
+	 *
+	 * @var array
+	 */
+	protected $fillable = array(
+		'username',
+		'email',
+		'password',
+		'city',
+		'created_at',
+		'updated_at',
+		'city'
+	);
+
+
+	/**
+	 * Add relationship all situations
+	 */
+	public function situations() {
+		return $this->hasMany('Situation');
+	}
 }
