@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I am making a statement here',
-			'upvotes' 	=> 843,
+			'body' 		=> 'I once had to present my app at a hackathon',
+			'upvotes' 	=> 84300,
 			'downvotes' => 239,
 			'user_id' 	=> $jake->id
 		));
@@ -36,8 +36,8 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I am making a better statement here',
-			'upvotes' 	=> 34,
+			'body' 		=> 'I once had to work with Jake Cleary',
+			'upvotes' 	=> 34123,
 			'downvotes' => 89,
 			'user_id' 	=> $craig->id
 		));
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I once accidentally went to a ',
+			'body' 		=> 'I accidentally went to a pubhack in Portsmouth',
 			'upvotes' 	=> 432,
 			'downvotes' => 8,
 			'user_id' 	=> $steve->id
@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'No one ever laughs at my jokes',
+			'body' 		=> 'No one ever laughs at my jokes, apart from my cat',
 			'upvotes' 	=> 2,
 			'downvotes' => 8,
 			'user_id' 	=> $rebecca->id
@@ -120,7 +120,7 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I once had to talk to a human being for more than 1 second. Crazy',
+			'body' 		=> 'I once sent a snapchat of my penis to my mum',
 			'upvotes' 	=> 432,
 			'downvotes' => 8211,
 			'user_id' 	=> $sophie->id
@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I once had a dream I sold meth.',
+			'body' 		=> 'I love eating puppy feet',
 			'upvotes' 	=> 432,
 			'downvotes' => 811,
 			'user_id' 	=> $lemon->id
@@ -148,7 +148,7 @@ class DatabaseSeeder extends Seeder {
 		));
 
 		$situation = Situation::create(array(
-			'body' 		=> 'I am Sparta.',
+			'body' 		=> 'I once took a girl on a date to the local tip',
 			'upvotes' 	=> 2,
 			'downvotes' => 8,
 			'user_id' 	=> $robert->id
