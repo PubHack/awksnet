@@ -35,8 +35,8 @@
                         <div class="item__body">
                             {{ $situation->body }}
                         </div>
-                    <a href="/voteup/{{ $situation->id }}"><i class="fa fa-caret-up vote"></i></a>
-                    <a href="/votedown/{{ $situation->id }}"><i class="fa fa-caret-down vote"></i></a>
+                    <a href="/voteup/{{ $situation->id }}" class="vote--good"><i class="fa fa-caret-up"></i>{{ $situation->upvotes }}</a>
+                    <a href="/votedown/{{ $situation->id }}" class="vote--bad"><i class="fa fa-caret-down"></i>{{ $situation->downvotes }}</a>
                     </div>
                 </div>
 

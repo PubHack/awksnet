@@ -43,7 +43,7 @@ class Situation extends Eloquent {
         if($this->upvotes > 0 && $this->downvotes > 0)
             return floor(($this->upvotes / ($this->upvotes + $this->downvotes)) * 100);
 
-        return 50;
+        return 100;
     }
 
     /**
