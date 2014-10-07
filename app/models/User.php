@@ -50,7 +50,7 @@ class User extends Eloquent implements UserInterface {
 	 */
 	public function gravatar()
 	{
-		return 'http://www.gravatar.com/avatar/' . md5($this->email);
+		return 'http://www.gravatar.com/avatar/' . md5($this->email) . '?s=200';
 	}
 
 	public function getRememberToken()
