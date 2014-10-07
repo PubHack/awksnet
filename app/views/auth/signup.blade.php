@@ -10,7 +10,7 @@
         </ul>
     @endif()
 
-    {{ Form::open(['route' => 'signup-post']) }}
+    {{ Form::open(['route' => 'signup']) }}
 
         <div class="form__feild-set">
             {{ Form::label('username', 'Username') }}
