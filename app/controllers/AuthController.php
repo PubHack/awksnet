@@ -29,6 +29,12 @@ class AuthController extends BaseController {
         return View::make('auth.signup');
     }
 
+    public function update($id)
+    {
+        $user = User::find($id);
+        return View::make('auth.update', array('user' => $user));
+    }
+
     public function loginPost()
     {
         $validator  = Validator::make(Input::all(), $this->loginRules);
@@ -65,6 +71,12 @@ class AuthController extends BaseController {
         $user->save();
         Auth::login($user);
         return Redirect::route('home');
+    }
+
+    public function updatePost($id)
+    {
+        $user = User::find($id);
+        return View::make('auth.update', $user);
     }
 
     public function logout()
