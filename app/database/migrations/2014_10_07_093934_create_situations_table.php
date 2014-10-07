@@ -18,7 +18,7 @@ class CreateSituationsTable extends Migration {
 			$t->integer('upvotes');
 			$t->integer('downvotes');
 			$t->timestamps();
-			$t->integer('user_id');
+			$t->integer('user_id')->unsigned();
 			$t->foreign('user_id')->references('id')->on('users');
 		});
 	}
