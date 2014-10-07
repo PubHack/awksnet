@@ -44,9 +44,10 @@ class HomeController extends BaseController {
 			$situation->downvotes = 0;
 			$situation->user_id = $this->user->id;
 			$situation->save();
+			return Redirect::route('home');
 		}
-		
-		return Redirect::route('home');
+
+		return Redirect::to('/');
 	}
 
 }

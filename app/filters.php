@@ -72,7 +72,7 @@ Route::filter('guest', function()
 
 Route::filter('is_user', function()
 {
-	return Auth::check();
+	if(!Auth::check()) return Redirect::to('/');
 });
 
 /*

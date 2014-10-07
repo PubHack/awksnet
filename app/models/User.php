@@ -52,4 +52,19 @@ class User extends Eloquent implements UserInterface {
 	{
 		return 'http://www.gravatar.com/avatar/' . md5($this->email);
 	}
+
+	public function getRememberToken()
+	{
+		return null; // not supported
+	}
+
+	public function setRememberToken($value)
+	{
+	// not supported
+	}
+
+	public function getRememberTokenName()
+	{
+		return null; // not supported
+	}
 }
