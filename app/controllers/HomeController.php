@@ -24,8 +24,6 @@ class HomeController extends BaseController {
 					->groupBy('users.city')
                     ->get();
 
-		return $locations;
-
 		return View::make('pages.map', array(
 			'locations' => $locations
 		));
